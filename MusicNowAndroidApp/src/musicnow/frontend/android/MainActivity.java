@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gcm.GCMRegistrar;
@@ -89,23 +90,36 @@ public class MainActivity extends FragmentActivity implements
                 mRegisterTask.execute(null, null, null);
             }
         }
+        
+		/*-----------------------------------------------------------------
+		 * 
+		 *    Bottom Button Bar Page Switching Function
+		 * 
+		 *-----------------------------------------------------------------*/
 		
-		// Set up the action bar to show a dropdown list.
-		final ActionBar actionBar = getActionBar();
-		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+		Button logIn = (Button) findViewById(R.id.login);
+    	logIn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
+                startActivityForResult(myIntent, 0);
+            }
+		});
 
-		// Set up the dropdown list navigation in the action bar.
-		actionBar.setListNavigationCallbacks(
-		// Specify a SpinnerAdapter to populate the dropdown list.
-				new ArrayAdapter<String>(actionBar.getThemedContext(),
-						android.R.layout.simple_list_item_1,
-						android.R.id.text1, new String[] {
-								getString(R.string.title_section1),
-								getString(R.string.title_section2),
-								getString(R.string.title_section3), }), this);
+		Button accountLogIn = (Button) findViewById(R.id.account_login);
+		accountLogIn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
+                startActivityForResult(myIntent, 0);
+            }
+		});
+		Button homePage = (Button) findViewById(R.id.home_page);
+    	homePage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), MainActivity.class);
+                startActivityForResult(myIntent, 0);
+            }
+		});
 		
-		// perform test query
 		testQuery();
 	}
 
@@ -129,13 +143,14 @@ public class MainActivity extends FragmentActivity implements
 		}
 	}
 
+	/*
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		// Serialize the current dropdown position.
 		outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar()
-				.getSelectedNavigationIndex());
+				.getSelectedNavigationIndex());/
 	}
-
+*/
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -143,46 +158,7 @@ public class MainActivity extends FragmentActivity implements
 		return true;
 	}
 
-	@Override
-	public boolean onNavigationItemSelected(int position, long id) {
-		// When the given dropdown item is selected, show its contents in the
-		// container view.
-		Fragment fragment = new DummySectionFragment();
-		Bundle args = new Bundle();
-		args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-		fragment.setArguments(args);
-		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.container, fragment).commit();
-		return true;
-	}
 
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class DummySectionFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
-
-		public DummySectionFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			// Create a new TextView and set its text to the fragment's section
-			// number argument value.
-			TextView textView = new TextView(getActivity());
-			textView.setGravity(Gravity.CENTER);
-			textView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-			return textView;
-		}
-	}
-	
     private final BroadcastReceiver mHandleMessageReceiver =
             new BroadcastReceiver() {
         @Override
@@ -211,5 +187,13 @@ public class MainActivity extends FragmentActivity implements
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public boolean onNavigationItemSelected(int arg0, long arg1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
 
 }

@@ -1,0 +1,283 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:contentDescription="@string/title_activity_venue_profile"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:baselineAlignBottom="false"
+        android:contentDescription="@string/main_page"
+        android:src="@drawable/music_now_background" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <GridLayout
+        android:id="@+id/bottom_button_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView1"
+        android:columnCount="2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/home_page"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/garage"
+            android:contentDescription="@string/main_page"
+            android:minHeight="60dp"
+            android:minWidth="60dp" />
+
+        <Button
+            android:id="@+id/search"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/search"
+            android:contentDescription="@string/search_button"
+            android:focusable="false"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <Button
+            android:id="@+id/favorites"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:background="@drawable/favorites"
+            android:contentDescription="@string/favorites"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <Button
+            android:id="@+id/login"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="right|top"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:background="@drawable/login"
+            android:contentDescription="@string/login"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+    </GridLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="270dp"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="428dp"
+            android:layout_gravity="top"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/account_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="@string/venue_address_label"
+                android:labelFor="@+id/account_name_input"
+                android:text="@string/account_name_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/account_name_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/address_input_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/venue_address_input"
+                android:text="@string/venue_address_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/venue_address_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textPostalAddress" />
+
+            <TextView
+                android:id="@+id/city_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/venue_city_input"
+                android:text="@string/venue_city_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/venue_city_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/venue_state_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/state_select"
+                android:text="@string/venue_state_label"
+                android:textColor="@android:color/black" />
+
+            <Spinner
+                android:id="@+id/state_select"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:entries="@array/state"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                tools:listitem="@android:layout/simple_spinner_item" />
+
+            <TextView
+                android:id="@+id/venue_zip_code_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/zip_code_input"
+                android:text="@string/venue_zip_code_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/zip_code_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/venue_info_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/additional_info_input"
+                android:text="@string/additional_venue_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/additional_info_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="text"
+                android:lines="2" />
+
+            <TextView
+                android:id="@+id/web_link_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/web_link_input"
+                android:text="@string/web_link_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/web_link_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textUri" />
+
+            <TextView
+                android:id="@+id/password_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:labelFor="@+id/password_input"
+                android:text="@string/password_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/password_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/verify_password_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:labelFor="@+id/verify_password_input"
+                android:text="@string/verify_password_label"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/verify_password_input"
+                android:imeOptions="actionDone"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

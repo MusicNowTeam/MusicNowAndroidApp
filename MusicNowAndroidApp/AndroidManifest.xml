@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="musicnow.frontend.android"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0"
+    android:windowSoftInputMode="adjustResize" >
 
     <uses-sdk
         android:minSdkVersion="17"
@@ -31,9 +32,9 @@
 	
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"  
+        android:icon="@drawable/mn_icon"
+        android:theme="@style/AppTheme" 
     	android:largeHeap="true">
         <activity
             android:name="musicnow.frontend.android.MainActivity"
@@ -44,6 +45,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+                <activity
+            android:name="musicnow.frontend.android.LoginActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+                <activity
+            android:name="musicnow.frontend.android.AccountTypeActivity"
+            android:label="@string/app_name" >
+        </activity>
+                <activity
+            android:name="musicnow.frontend.android.PerformerProfileActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+                <activity
+            android:name="musicnow.frontend.android.VenueProfileActivity"
+            android:label="@string/app_name" 
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        
         
         <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
   			<intent-filter>

@@ -1,7 +1,148 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:ignore="MergeRootFrame" />
+    android:clickable="true"
+    android:contentDescription="@string/main_page"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:baselineAlignBottom="false"
+        android:contentDescription="@string/main_page"
+        android:src="@drawable/music_now_home" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <GridLayout
+        android:id="@+id/bottom_button_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView1"
+        android:columnCount="2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/home_page"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/garage"
+            android:contentDescription="@string/main_page"
+            android:minHeight="60dp"
+            android:minWidth="60dp" />
+
+        <Button
+            android:id="@+id/search"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/search"
+            android:contentDescription="@string/search_button"
+            android:focusable="false"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <Button
+            android:id="@+id/favorites"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:background="@drawable/favorites"
+            android:contentDescription="@string/favorites"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <Button
+            android:id="@+id/login"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="right|top"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:background="@drawable/login"
+            android:contentDescription="@string/login"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/account_login"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/find_a_show"
+        android:layout_alignBottom="@+id/find_a_show"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/find_a_show"
+        android:lines="2"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        android:text="@string/account_login"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:width="100dp" />
+
+    <Button
+        android:id="@+id/find_a_show"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="22dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:lines="2"
+        android:nextFocusRight="@+id/button2"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        android:scrollHorizontally="false"
+        android:text="@string/find_a_show"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:width="100dp" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/find_a_show"
+        android:layout_alignRight="@+id/account_login"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/welcome_message"
+        android:gravity="center"
+        android:lines="3"
+        android:linksClickable="false"
+        android:text="@string/welcome_message"
+        android:textSize="20sp" />
+
+</RelativeLayout>
