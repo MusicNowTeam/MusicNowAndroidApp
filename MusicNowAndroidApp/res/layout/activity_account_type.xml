@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:contentDescription="@string/main_page"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:baselineAlignBottom="false"
+        android:contentDescription="@string/main_page"
+        android:src="@drawable/music_now_background" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <GridLayout
+        android:id="@+id/bottom_button_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView1"
+        android:columnCount="2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/home_page"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/garage"
+            android:contentDescription="@string/main_page"
+            android:minHeight="60dp"
+            android:minWidth="60dp" />
+
+        <Button
+            android:id="@+id/search"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/search"
+            android:contentDescription="@string/search_button"
+            android:focusable="false"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <Button
+            android:id="@+id/favorites"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:background="@drawable/favorites"
+            android:contentDescription="@string/favorites"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <Button
+            android:id="@+id/login"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="right|top"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:background="@drawable/login"
+            android:contentDescription="@string/login"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/account_type_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:text="@string/select_account_type"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/user_type_venue_input"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/user_type_performer_input"
+        android:layout_alignBottom="@+id/user_type_performer_input"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:lines="2"
+        android:nextFocusRight="@+id/button2"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        android:scrollHorizontally="false"
+        android:text="@string/venue"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:width="100dp" />
+
+    <Button
+        android:id="@+id/user_type_performer_input"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="false"
+        android:layout_margin="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:lines="2"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        android:text="@string/performer"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:width="100dp" />
+
+</RelativeLayout>
